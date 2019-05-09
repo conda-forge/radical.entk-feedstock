@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [py3k or win]
 
@@ -23,7 +23,7 @@ requirements:
     - python
     - radical.pilot
     - radical.utils
-    - pika
+    - pika 0.13.0
     - pytest
     - hypothesis
     - sphinx
