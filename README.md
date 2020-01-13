@@ -190,5 +190,6 @@ Feedstock Maintainers
 
 * [@andre-merzky](https://github.com/andre-merzky/)
 * [@iparask](https://github.com/iparask/)
+* [@lee212](https://github.com/lee212/)
 * [@vivek-bala](https://github.com/vivek-bala/)
 
