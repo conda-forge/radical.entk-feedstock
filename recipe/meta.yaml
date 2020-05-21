@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "f15fed811600c4492f6fbf6f55c9eab43415ecd78629b7c4e78579bb5510d68a" %}
+{% set version = "1.4.0" %}
+{% set sha256 = "1f02906c671b0487fef5435052358c555617513e1c8ac72d2ddf8768c314a6e3" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [py2k or win]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  skip: true  # [py2k or win]
 
 requirements:
   host:
@@ -27,17 +27,17 @@ requirements:
     - pytest
     - hypothesis
     - sphinx
-    
+
 test:
   imports:
     - radical.entk
-  
+
 about:
   home: https://github.com/radical-cybertools/radical.entk
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: 'Ensemble Toolkit (EnTK) is an ensemble execution system written in Python'
+  summary: Ensemble Toolkit (EnTK) is an ensemble execution system written in Python
   description: |
     Ensemble Toolkit is a Python framework for developing and executing applications comprised of 
     multiple sets of tasks, aka ensembles. Ensemble Toolkit has the following unique features, (i) 
