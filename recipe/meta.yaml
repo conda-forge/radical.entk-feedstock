@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.4.1.post1" %}
-{% set sha256 = "5fc1eb74940edcd614389b738a59382db42296deaaf50ecfb692f66d0ef8ef06" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "e81b6cc7fa35706664300f43ed128b6edc56eeef92f1de709be975617499d55c" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py2k or win]
 
