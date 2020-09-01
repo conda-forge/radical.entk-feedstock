@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.4.1.post1" %}
-{% set sha256 = "5fc1eb74940edcd614389b738a59382db42296deaaf50ecfb692f66d0ef8ef06" %}
+{% set version = "1.5.1" %}
+{% set sha256 = "8f01dc0b3a47f3dde1c476695fd0f8bb32f8d666a9426e83574ccbf209dbc23d" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py2k or win]
 
@@ -24,8 +24,6 @@ requirements:
     - radical.pilot
     - radical.utils
     - pika 0.13.0
-    - pytest
-    - hypothesis
     - sphinx
 
 test:
@@ -50,7 +48,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - vivek-bala
     - andre-merzky
     - iparask
     - lee212
