@@ -5,9 +5,13 @@ Home: https://github.com/radical-cybertools/radical.entk
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/radical.entk-feedstock/blob/master/LICENSE.txt)
 
 Summary: Ensemble Toolkit (EnTK) is an ensemble execution system written in Python
+
+Development: https://github.com/radical-cybertools/radical.entk
+
+Documentation: https://radicalentk.readthedocs.io/en/latest/
 
 Ensemble Toolkit is a Python framework for developing and executing applications comprised of
 multiple sets of tasks, aka ensembles. Ensemble Toolkit has the following unique features, (i)
