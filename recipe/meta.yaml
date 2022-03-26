@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.12.0" %}
-{% set sha256 = "1ea4814c8324e28cc2b86e6f44d26aaa09c8257ed58f50d1d2eada99adaa17da" %}
+{% set version = "1.13.0" %}
+{% set sha256 = "5489338173409777d69885fd5fdb296552937d5a539a8182321bebe273647e1c" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [py2k or win]
+  skip: true  # [py2k or py>39 or win]
 
 requirements:
   host:
@@ -21,10 +21,9 @@ requirements:
     - pip
   run:
     - python
-    - radical.pilot
-    - radical.utils
+    - radical.utils >=1.12
+    - radical.pilot >=1.12
     - pika 0.13.0
-    - sphinx
 
 test:
   imports:
@@ -35,19 +34,19 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: Ensemble Toolkit (EnTK) is an ensemble execution system written in Python
+  summary: RADICAL-EnTK is an ensemble execution system written in Python
   description: |
-    Ensemble Toolkit is a Python framework for developing and executing applications comprised of 
-    multiple sets of tasks, aka ensembles. Ensemble Toolkit has the following unique features, (i) 
-    abstractions that enable the expression of various task graphs, (ii) abstraction of resource 
-    management and task execution, (iii) Fault tolerance as a first order concern and (iv) 
-    well-established runtime capabilities to enable efficient and dynamic usage of grid resources 
-    and supercomputers.
+    RADICAL-EnTK (Ensemble Toolkit) is a Python framework for developing and 
+    executing applications comprised of multiple sets of tasks, aka ensembles. 
+    Ensemble Toolkit has the following unique features, (i) abstractions that 
+    enable the expression of various task graphs, (ii) abstraction of resource 
+    management and task execution, (iii) Fault tolerance as a first order 
+    concern and (iv) well-established runtime capabilities to enable efficient 
+    and dynamic usage of grid resources and supercomputers.
   dev_url: https://github.com/radical-cybertools/radical.entk
   doc_url: https://radicalentk.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
     - andre-merzky
-    - iparask
-    - lee212
+    - mtitov
