@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.17.0" %}
-{% set sha256 = "695e162b8b6209384660400920f4a2e613d01f0b904e44cfe5b5d012dcc35af9" %}
+{% set version = "1.18.0" %}
+{% set sha256 = "049f70ec7e95819ec0ea706ee6275db04799ceff119dd7b675ef0d36d814de6f" %}
 
 package:
   name: {{ name|lower }}
