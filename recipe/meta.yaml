@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.37.0" %}
-{% set sha256 = "a0b362afc1372cb4545175122663844b41382f6ed46d9a14cf0052b528bce0ab" %}
+{% set version = "1.41.0" %}
+{% set sha256 = "cc3aa7d569892bd052d519d9e929183d0ff5418c9564299cc4c4a07ad3ba6f93" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [py2k or py>39 or win]
+  skip: true  # [py2k or win]
 
 requirements:
   host:
@@ -21,11 +21,8 @@ requirements:
     - pip
   run:
     - python
-    - radical.utils >=1.12
-    - radical.pilot >=1.12
-    - pika 0.13.0
-    - packaging
-    - requests
+    - radical.utils >=1.40
+    - radical.pilot >=1.40
 
 test:
   imports:
