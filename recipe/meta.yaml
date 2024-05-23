@@ -1,28 +1,28 @@
 {% set name = "radical.entk" %}
-{% set version = "1.48.0" %}
-{% set sha256 = "ffc61c0c5c31c7b70e329509ab2da5e2a264d64c997995014a6b2341efdbc00e" %}
+{% set version = "1.60.0" %}
+{% set sha256 = "5187e2bc4619caec70a834e9ed8aa9945b6ce048183d8bf3c6413dad477ac456" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(".", "_") }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [py2k or win]
+  noarch: python
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
-    - radical.utils >=1.40
-    - radical.pilot >=1.40
+    - python >=3.7
+    - radical.utils >=1.60
+    - radical.pilot >=1.60
 
 test:
   imports:
@@ -43,7 +43,7 @@ about:
     concern and (iv) well-established runtime capabilities to enable efficient 
     and dynamic usage of grid resources and supercomputers.
   dev_url: https://github.com/radical-cybertools/radical.entk
-  doc_url: https://radicalentk.readthedocs.io/en/latest/
+  doc_url: https://radicalentk.readthedocs.io
 
 extra:
   recipe-maintainers:
