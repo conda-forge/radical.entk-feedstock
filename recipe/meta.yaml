@@ -1,13 +1,13 @@
 {% set name = "radical.entk" %}
-{% set version = "1.81.0" %}
-{% set sha256 = "f67cfc6239f64783ea56be6f67b50f19dd5a5ff320cebc5232160a34d81fd773" %}
+{% set version = "1.92.0" %}
+{% set sha256 = "908a5d35cbc801c8b064837a21cbf5ad1a9b4aed0db48f2db84ef85d4e529cef" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(".", "_") }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(".", "_") }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
