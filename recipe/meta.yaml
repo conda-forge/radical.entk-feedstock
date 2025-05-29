@@ -1,32 +1,38 @@
 {% set name = "radical.entk" %}
-{% set version = "1.81.0" %}
-{% set sha256 = "f67cfc6239f64783ea56be6f67b50f19dd5a5ff320cebc5232160a34d81fd773" %}
+{% set version = "1.102.0" %}
+{% set sha256 = "c29b28be5ef0e96eda3c518cd061b4924d761ff585369c10803457587bb7eaf0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(".", "_") }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(".", "_") }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.7
-    - radical.utils >=1.60
-    - radical.pilot >=1.60
+    - python >={{ python_min }}
+    - radical.utils >=1.100.0,<1.110
+    - radical.pilot >=1.100.0,<1.110
 
 test:
   imports:
     - radical.entk
+  commands:
+    - pip check
+  requires:
+    - python {{ python_min }}
+    - pip
 
 about:
   home: https://github.com/radical-cybertools/radical.entk
