@@ -1,6 +1,6 @@
 {% set name = "radical.entk" %}
-{% set version = "1.102.0" %}
-{% set sha256 = "c29b28be5ef0e96eda3c518cd061b4924d761ff585369c10803457587bb7eaf0" %}
+{% set version = "1.103.0" %}
+{% set sha256 = "bfd5a8df059310e8f8609a8eade1aec50850142bf5903e1100e99b7bedc85302" %}
 
 package:
   name: {{ name|lower }}
@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - radical.utils >=1.100.0,<1.110
-    - radical.pilot >=1.100.0,<1.110
+    - radical.utils >=1.100,<1.110
+    - radical.pilot >=1.100,<1.110
 
 test:
   imports:
